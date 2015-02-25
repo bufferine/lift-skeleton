@@ -25,6 +25,7 @@ class HelloWorldIntegrationTests extends FlatSpec with WebBrowser with DriverBui
 @RunWith(classOf[JUnitRunner])
 class WebApplicationIntegrationTests extends FlatSpec with WebBrowser with DriverBuilder with DefaultBaseURLProvider with SpanSugar {
   val applicationHomepage: String = defaultBaseUrl
+  System.out.println("DEFAULT BASE URL " + applicationHomepage)
 
   "The blank Lift application" should "be accessible" in {
     go to applicationHomepage
