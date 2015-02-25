@@ -1,1 +1,1 @@
-web: target/start
+web: lift-webapp/target/start
