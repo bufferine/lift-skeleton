@@ -3,7 +3,7 @@ package code.snippet
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FlatSpec
-import org.scalatest.matchers.MustMatchers
+import org.scalatest.MustMatchers
 import net.liftweb.http.{S, LiftSession}
 import net.liftweb.util.Helpers._
 import net.liftweb.common.Empty
@@ -14,7 +14,7 @@ class HelloWorldScalaTest extends FlatSpec with MustMatchers {
   val session = new LiftSession("", randomString(20), Empty)
   val stableTime = now
 
-  override def withFixture(test: NoArgTest) {
+  override def withFixture(test: NoArgTest) = {
     S.initIfUninitted(session) {
       DependencyFactory.Time.doWith(stableTime) {
         super.withFixture(test) // execute t inside a http session
